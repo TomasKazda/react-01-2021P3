@@ -1,25 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import Button from './components/Button'
 
-function App() {
+function Div() {
+  let componenta = [<div>Něco</div>,
+                    <div>ještě</div>,
+                    <div>jiného.</div>];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          {componenta}
+          <Button text="Ach jo :/" color="#AAAAAA" something="no" />
+        </header>
+      </div>
+    </>
   );
 }
 
-export default App;
+export default Div;
