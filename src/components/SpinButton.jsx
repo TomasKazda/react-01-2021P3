@@ -1,10 +1,10 @@
 import {useState, useEffect} from 'react'
 import './SpinButton.css'
 
-let SpinButton = ({min = 0, max = 10, numberCallBack = (last, now) => (null), ...rest}) => {
+let SpinButton = ({min = 0, max = 10, numberCallBack = (last, now) => (null), step = 1, ...rest}) => {
     const [value, setValue] = useState(min)
     useEffect(() => {
-        numberCallBack(0, value)
+        numberCallBack(min, value)
       }, []);
     
     return (
@@ -15,13 +15,13 @@ let SpinButton = ({min = 0, max = 10, numberCallBack = (last, now) => (null), ..
             <div>
                 <button className='btn-spin__button' type='button' onClick={() => {
                     if (value >= max) return
-                    setValue(value+1);
-                    numberCallBack(value, value+1)
+                    setValue(value+step);
+                    numberCallBack(value, value+step)
                 }}>&#9650;</button>
                 <button className='btn-spin__button' type='button'  onClick={() => {
                     if (value <= min) return
-                    setValue(value-1);
-                    numberCallBack(value, value-1)
+                    setValue(value-step);
+                    numberCallBack(value, value-step)
                 }}>&#9660;</button>
             </div>
         </div>
