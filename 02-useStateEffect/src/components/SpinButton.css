@@ -1,0 +1,18 @@
+.spin-btn {
+    display: inline-flex;
+    padding: 0 .5em;
+}
+.spin-btn__value {
+    font-weight: 700;
+    font-size: 1.25em;
+}
+.spin-btn__updown {
+    background-color: initial;
+    border-radius: 0.25em;
+    border-color: currentColor;
+    color: currentColor;
+    display: block;
+    cursor: pointer;
+    margin-left: 0.5em;
+    user-select: none;
+}
